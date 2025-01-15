@@ -1,0 +1,6 @@
+
+pico-sdk/
+.zig-cache/
+zig-cache/
+zig-out/
+build/
