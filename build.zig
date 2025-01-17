@@ -10,7 +10,7 @@ pub fn build(build_config: *Build) void {
             .preferred_optimize_mode = .ReleaseFast,
         }),
         .target = build_config.standardTargetOptions(Build.StandardTargetOptionsArgs{
-            .default_target = com.rp2040_target,
+            .default_target = com.rp2350_target,
         }),
         .root_source_file = build_config.path("src/main.zig"),
     };
@@ -25,7 +25,7 @@ pub fn build(build_config: *Build) void {
     lib.root_module.addImport("pico", pico_module);
 
     // == Add the required includes ==
-    com.addPicoIncludes(build_config, pico_module);
+    com.addPicoIncludes(build_config, pico_module, .rp2350);
     com.addArmIncludes(build_config, pico_module);
 
     // == Define the install artifact ==

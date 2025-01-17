@@ -6,7 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(PICO_SDK_PATH "./pico-sdk")
 
-include(./pico-sdk/pico_sdk_init.cmake)
+set(PICO_PLATFORM "rp2350")
+set(PICO_BOARD "pico2")
+
+include(./pico-sdk/external/pico_sdk_import.cmake)
 pico_sdk_init()
 
 
