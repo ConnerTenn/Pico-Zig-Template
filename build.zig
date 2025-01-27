@@ -22,6 +22,10 @@ pub fn build(build_config: *Build) void {
         .root_source_file = build_config.path("Pico-Zig/pico.zig"),
     });
 
+    com.configureOptions(build_config, pico_module, com.Options{
+        .target = .rp2350,
+    });
+
     lib.root_module.addImport("pico", pico_module);
 
     // == Add the required includes ==
