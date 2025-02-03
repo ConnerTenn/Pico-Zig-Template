@@ -10,14 +10,14 @@ export fn main() void {
     pico.stdio.print("== Template ==\n", .{});
 
     //Init GPIO
-    pico.gpio.default_led.init(pico.gpio.Gpio.Config{
+    pico.hardware.gpio.default_led.init(pico.hardware.gpio.Gpio.Config{
         .direction = .out,
     });
 
     var toggle = true;
     while (true) {
         // csdk.gpio_put(pico.LED_PIN, toggle);
-        pico.gpio.default_led.put(toggle);
+        pico.hardware.gpio.default_led.put(toggle);
 
         csdk.sleep_ms(250);
         toggle = !toggle;
