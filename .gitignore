@@ -4,5 +4,3 @@ pico-sdk/
 zig-cache/
 zig-out/
 build/
-
-flake.nix

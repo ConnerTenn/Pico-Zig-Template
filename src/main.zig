@@ -4,13 +4,13 @@ const csdk = pico.csdk;
 
 export fn main() void {
     //Init prints
-    _ = pico.csdk.stdio_init_all();
-    csdk.sleep_ms(2000);
+    pico.stdio.init();
+    pico.library.time.sleep_ms(2000);
 
     pico.stdio.print("== Template ==\n", .{});
 
     //Init GPIO
-    pico.hardware.gpio.default_led.init(pico.hardware.gpio.Gpio.Config{
+    pico.hardware.gpio.default_led.init(pico.hardware.gpio.Pin.Config{
         .direction = .out,
     });
 
@@ -19,7 +19,7 @@ export fn main() void {
         // csdk.gpio_put(pico.LED_PIN, toggle);
         pico.hardware.gpio.default_led.put(toggle);
 
-        csdk.sleep_ms(250);
+        pico.library.time.sleep_ms(250);
         toggle = !toggle;
     }
 }

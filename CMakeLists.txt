@@ -6,14 +6,15 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(PICO_SDK_PATH "./pico-sdk")
 
+# == Gets automatically set by make flow ==
 # set(PICO_PLATFORM "rp2040")
 # set(PICO_PLATFORM "rp2350-riscv")
-set(PICO_PLATFORM "rp2350-arm-s")
+# set(PICO_PLATFORM "rp2350-arm-s")
 # set(PICO_BOARD "pico")
-set(PICO_BOARD "pico2")
+# set(PICO_BOARD "pico2")
 
 # set(CMAKE_BUILD_TYPE Debug)
-# set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Release)
 # set(CMAKE_BUILD_TYPE MinSizeRel)
 
 
